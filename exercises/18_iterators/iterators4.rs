@@ -10,6 +10,8 @@ fn factorial(num: u64) -> u64 {
     // - additional variables
     // For an extra challenge, don't use:
     // - recursion
+
+    std::iter::successors(Some(1_u64), |e| (e < &num).then_some(e + 1)).product()
 }
 
 fn main() {
